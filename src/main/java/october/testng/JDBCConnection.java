@@ -31,7 +31,7 @@ public class JDBCConnection {
 			conn = DriverManager.getConnection(DB_URL, USER, PASS);
 			System.out.println("Connected database successfully...");
 
-			
+
 			  // STEP 4: Execute a Select query
 			System.out.println("Creating statement...");
 			stmt = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_UPDATABLE);
@@ -39,7 +39,7 @@ public class JDBCConnection {
 			rs = stmt.executeQuery(sql);
 			int size = 0;
 			boolean b = rs.last();
-			if (b) 
+			if (b)
 			{
 				size = rs.getRow();
 			}
@@ -47,7 +47,7 @@ public class JDBCConnection {
 			System.out.println(size);
 			rs.beforeFirst();
 			// STEP 5: Extract data from result set
-			while (rs.next()) { // Retrieve by column name 
+			while (rs.next()) { // Retrieve by column name
 				int id =rs.getInt("student_id");
 				String name = rs.getString("name");
 				String major = rs.getString("major");
@@ -59,24 +59,24 @@ public class JDBCConnection {
 				System.out.print(", Major: " + major);
 				System.out.println("\n");
 			}
-			System.out.println(Arrays.deepToString(results));			 
+			System.out.println(Arrays.deepToString(results));
 
-			// STEP 4: Execute a Select query
-			System.out.println("Creating statement...");
+			// STEP 4: Execute a Update query
+			//System.out.println("Creating statement...");
 			// Update Query
 			/*String updateQuery = "Update student set major='Physics' where name ='Sara'";
 			PreparedStatement prepStmt = conn.prepareStatement(updateQuery);*/
 
 			// Insert query
-			
+
 			 /* String insertQuery =
 			  "INSERT INTO student (student_id, name, major) VALUES (?,?,?)";
 			  PreparedStatement prepStmt = conn.prepareStatement(insertQuery);
-			  
+
 			  prepStmt.setInt(1,17);
 			  prepStmt.setString(2,"SSN");
 			  prepStmt.setString(3,"Microbiology");
-			 
+
 
 			int executeUpdate = prepStmt.executeUpdate();
 			System.out.println(executeUpdate);*/

@@ -4,6 +4,7 @@
   <artifactId>MiscRepository</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <dependencies>
+  <!--TestNG dependency-->
   <dependency>
 			<groupId>org.testng</groupId>
 			<artifactId>testng</artifactId>
